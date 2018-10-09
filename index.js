@@ -1,6 +1,3 @@
-// Followed and learned examples from:
-// https://medium.freecodecamp.org/node-js-streams-everything-you-need-to-know-c9141306be93
-// and NodeJS documentation from their official website.
 
 // Transform is a type of Duplex stream
 const { Transform, Writable } = require('stream');
@@ -35,7 +32,7 @@ const inputData = new Transform({
         output.NumberOfLines += chunk.toString().split('\n').length;
         output.LengthInBytes += chunk.length;
         output.TimeElapsed = milliSeconds;
-        this.push(output); // Pushes the calculated values into the object created on line 30
+        this.push(output); // Pushes the calculated values into the object output
         callback(); // A function that needs to be called after we're done processing the data chunk
     }
 });
@@ -71,11 +68,11 @@ const argStream = new Writable({
     write(chunk, encoding, callback) {
     callback();
     }
- })
+ });
 
 
 outStream.on('finish', () => {
-    const seconds = milliSeconds / 1000; // Converting milliseconds to seconds for the throughput rate
+    const seconds = milliSeconds / 1000; // Converting milliseconds into seconds for the throughput rate
     const throughPutRate = Math.round(output.LengthInBytes / seconds);
     const report = 
     `SUMMARY: Time Elapsed: ${output.TimeElapsed} ms, Length in Bytes: ${output.LengthInBytes}, Number of Lines ${output.NumberOfLines}, Throughput Rate: ${throughPutRate} Bytes/Sec`;
@@ -94,7 +91,3 @@ switch(options[2]) {
     default:
         readStream.pipe(inputData).pipe(outStream);
 }
-
-
-
-
