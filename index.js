@@ -79,6 +79,7 @@ outStream.on('finish', () => {
     writeReport.end(report);
 });
 
+// User can type on cmd an option to either view: word count or character count of a file
 switch(options[2]) {
     case "-w": 
         readStream.pipe(wordCount).pipe(argStream);
