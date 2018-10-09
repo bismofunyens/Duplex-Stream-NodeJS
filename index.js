@@ -1,6 +1,5 @@
 const { Transform, Writable } = require('stream');
 const { createReadStream, createWriteStream } = require('fs');
-
 const readStream = createReadStream('file.txt'); // A dummy text file 
 const writeStream = createWriteStream('raw.txt'); // A file for raw data to be inputted
 const writeReport = createWriteStream('report.txt');// File for the final report
@@ -68,6 +67,8 @@ const argStream = new Writable({
     callback();
     }
  });
+
+
  
 outStream.on('finish', () => {
     const seconds = milliSeconds / 1000; // Converting milliseconds into seconds for the throughput rate

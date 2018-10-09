@@ -1,0 +1,1 @@
+{"NumberOfLines":197,"LengthInBytes":60586,"TimeElapsed":0.017667,"Words":0,"Characters":0,"GrowthRate":0}
