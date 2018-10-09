@@ -6,7 +6,7 @@ const writeStream = createWriteStream('raw.txt'); // A file for raw data to be i
 const writeReport = createWriteStream('report.txt');// File for the final report
 
 const options = process.argv;
-const fileName = process.stdin;
+
 // Calculating time elapsed(Probably not the best way to calculate it)
 const oneNanoSecond = 1e9;
 const startTime = process.hrtime();
