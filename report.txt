@@ -1,0 +1,1 @@
+SUMMARY: Time Elapsed: 0.028207 ms, Length in Bytes: 5894, Number of Lines 19, Throughput Rate: 208955224 Bytes/Sec
