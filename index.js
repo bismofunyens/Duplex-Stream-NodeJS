@@ -1,5 +1,3 @@
-
-// Transform is a type of Duplex stream
 const { Transform, Writable } = require('stream');
 const { createReadStream, createWriteStream } = require('fs');
 
@@ -8,7 +6,7 @@ const writeStream = createWriteStream('raw.txt'); // A file for raw data to be i
 const writeReport = createWriteStream('report.txt');// File for the final report
 
 const options = process.argv;
-
+const fileName = process.stdin;
 // Calculating time elapsed(Probably not the best way to calculate it)
 const oneNanoSecond = 1e9;
 const startTime = process.hrtime();
@@ -23,7 +21,8 @@ const output = {
     LengthInBytes: 0,
     TimeElapsed: milliSeconds,
     Words : 0,
-    Characters: 0
+    Characters: 0,
+    GrowthRate: 0
 };
 
 const inputData = new Transform({
@@ -69,8 +68,7 @@ const argStream = new Writable({
     callback();
     }
  });
-
-
+ 
 outStream.on('finish', () => {
     const seconds = milliSeconds / 1000; // Converting milliseconds into seconds for the throughput rate
     const throughPutRate = Math.round(output.LengthInBytes / seconds);
@@ -91,3 +89,11 @@ switch(options[2]) {
     default:
         readStream.pipe(inputData).pipe(outStream);
 }
+
+module.exports = {
+    inputData,
+    wordCount,
+    charCount,
+    outStream,
+    argStream
+};
