@@ -15,7 +15,7 @@ node . (runs the default index.js file)
 OR
 
 node index.js
-
+node growth (to run the growth.js script)
 ## Running process.argv
 
 - cat file.txt | node . -w (this option will calculate and display the number of words in the file)
