@@ -19,7 +19,7 @@ node index.js
 ## Running process.argv
 
 - cat file.txt | node . -w (this option will calculate and display the number of words in the file)
-- cat file.txt | node . -c (this option will calculate the number of characters in the file)
+- cat file.txt | node . -c (this option will calculate and display the number of characters in the file)
 
 ## Built With
 
