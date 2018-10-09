@@ -15,6 +15,7 @@ node . (runs the default index.js file)
 OR
 
 node index.js
+
 node growth (to run the growth.js script)
 ## Running process.argv
 
