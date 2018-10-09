@@ -21,6 +21,8 @@ node index.js
 - cat file.txt | node . -w (this option will calculate and display the number of words in the file)
 - cat file.txt | node . -c (this option will calculate and display the number of characters in the file)
 
+## Challenges
+Calculating the growth rate was a difficult process for me to figure out. However, I made a second script file called "growth.js" that uses stdin to let the user add new lines of text into "file.txt". After inputting new lines of text into the file, a console.log will notify you that the text file has been updated with the current number of lines in the file.
 ## Built With
 
 * NodeJS
